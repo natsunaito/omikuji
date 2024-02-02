@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<link href="css/index.css" rel="stylesheet" type="text/css" />
+	<title>おみくじ</title>
+</head>
+
+<body>
+	<main>
+
+		<img class="torii" src="img/torii.png">
+
+		<div class="omikuji_box">
+			<h1>今日の運勢</h1>
+			<img class="omikuji" id="omikujiImg" src="img/omikuji.png">
+		</div>
+
+		<img class="inari" src="img/inari_kitsune.png">
+
+		<div class="comment">
+			<p>今日の運勢はどうかな～？</p>
+		</div>
+
+		<button class="button" type="button" onclick="drawOmikuji()">占う！</button>
+
+	</main>
+
+	<script>
+		function drawOmikuji() {
+			var resultPages = ["result_daikichi", "result_chuukichi", "result_kichi", "result_syoukichi", "result_kyou", "result_daikyou"];
+			var randomIndex = Math.floor(Math.random() * resultPages.length);
+			var selectedResultPage = resultPages[randomIndex];
+			window.location.href = selectedResultPage;
+		}
+
+	</script>
+</body>
+
+</html>
